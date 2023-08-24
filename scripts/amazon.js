@@ -1,63 +1,31 @@
-const produk = [
-    {
-        gambar: "images/products/athletic-cotton-socks-6-pairs.jpg",
-        nama: "Kaus Kaki Katun Atletik Hitam dan Abu-Abu - 6 Pasang",
-        rating: {
-            bintang: 4.5,
-            jumlah: 87,
-        },
-        harga: 15000,
-    },
-    {
-        gambar: "images/products/intermediate-composite-basketball.jpg",
-        nama: "Bola Basket Ukuran Menengah",
-        rating: {
-            bintang: 4,
-            jumlah: 127,
-        },
-        harga: 30000,
-    },
-    {
-        gambar: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
-        nama: "Kaos Katun Polos Dewasa - 2 Paket",
-        rating: {
-            bintang: 4.5,
-            jumlah: 56,
-        },
-        harga: 20000,
-    },
-];
-
 let productsHTML = "";
 
-produk.forEach((product) => {
+products.forEach((product) => {
     productsHTML += /*html*/ `
         <div class="product-container">
             <div class="product-image-container">
                 <img
                     class="product-image"
-                    src="${product.gambar}"
+                    src="${product.image}"
                 />
             </div>
 
             <div class="product-name limit-text-to-2-lines">
-                ${product.nama}
+                ${product.name}
             </div>
 
             <div class="product-rating-container">
                 <img
                     class="product-rating-stars"
-                    src="images/ratings/rating-${
-                        product.rating.bintang * 10
-                    }.png"
+                    src="images/ratings/rating-${product.rating.stars * 10}.png"
                 />
                 <div class="product-rating-count link-primary">${
-                    product.rating.jumlah
+                    product.rating.count
                 }</div>
             </div>
 
-            <div class="product-price">Rp. ${product.harga.toLocaleString(
-                "id"
+            <div class="product-price">$${(product.priceCents / 100).toFixed(
+                2
             )}</div>
 
             <div class="product-quantity-container">
