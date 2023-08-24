@@ -31,7 +31,7 @@ const produk = [
 let productsHTML = "";
 
 produk.forEach((product) => {
-    productsHTML += `
+    productsHTML += /*html*/ `
         <div class="product-container">
             <div class="product-image-container">
                 <img
